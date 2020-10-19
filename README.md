@@ -4,7 +4,29 @@ Compares (abstract) tree objects
 
 # Description #
 
+This can be useful for syncing filesystems or other hierarchical structures.
 
+The library will take 2 tree objects and returns abstract working instructions
+so the second tree will look like the first tree.
+
+      root-reference-tree  root-working-tree
+            /  \                 /  \
+          bar  foo             bar  foo
+         / | \                     / | \
+        /  |  \                   /  |  \
+    bar1  bar2 bar3           foo1  foo2 foo3
+
+We need 9 steps to transform the working tree.
+
+1. sync `/root-reference-tree` to `/root-working-tree`
+2. sync `/root-reference-tree/bar` to `/root-working-tree/bar`
+3. sync `/root-reference-tree/foo` to `/root-working-tree/foo`
+4. copy `/root-reference-tree/bar/bar1` under `/root-working-tree/bar`
+5. copy `/root-reference-tree/bar/bar2` under `/root-working-tree/bar`
+6. copy `/root-reference-tree/bar/bar3` under `/root-working-tree/bar`
+7. remove `/root-working-tree/bar/foo1`
+8. remove `/root-working-tree/bar/foo2`
+9. remove `/root-working-tree/bar/foo3`
 
 # Used tutorials #
 
