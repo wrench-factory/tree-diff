@@ -1,0 +1,31 @@
+import pathlib
+from setuptools import setup, find_packages
+
+# The directory containing this file
+HERE = pathlib.Path(__file__).parent
+
+# The text of the README file
+README = (HERE / "README.md").read_text()
+
+# This call to setup() does all the work
+setup(
+    name="tree-diff",
+    version="0.0.4",
+    description="Compares (abstract) tree objects",
+    long_description=README,
+    long_description_content_type="text/markdown",
+    url="https://github.com/wrench-factory/tree-diff",
+    author="Erik Wasser",
+    author_email="fuzz@namm.de",
+    license="MIT",
+    classifiers=[
+        "License :: OSI Approved :: MIT License",
+        "Programming Language :: Python :: 3.7",
+    ],
+    packages=find_packages(where='src', exclude=("tests",)),
+    package_dir={'':'src'},
+    include_package_data=True,
+    install_requires=["anytree"],
+    entry_points={
+    },
+)
