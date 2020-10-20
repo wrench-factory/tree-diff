@@ -13,6 +13,7 @@ This is just a rudimentary documentation for this project.
    :maxdepth: 2
 
 
+
 Indices and tables
 ==================
 
