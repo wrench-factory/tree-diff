@@ -12,6 +12,7 @@ This is just a rudimentary documentation for this project.
    :caption: Contents
    :maxdepth: 2
 
+   modules
 
 
 Indices and tables
